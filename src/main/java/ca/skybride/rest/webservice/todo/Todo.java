@@ -9,6 +9,12 @@ public class Todo {
 	private String description;
 	private Date targetDate;
 	private boolean isDone;
+	
+	//tutorial had to put this in to get browser restlet client to not show a 500 error response
+//	protected Todo() {
+//		
+//	}
+	//it worked automatically for us
 
 	public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
 		super();
