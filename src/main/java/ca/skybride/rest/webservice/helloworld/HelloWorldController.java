@@ -19,13 +19,13 @@ public class HelloWorldController {
 	}
 	
 	@GetMapping(path="/hello-world-bean")
-	public HelloWorldBean helloWorldBean(){
-		return new HelloWorldBean( "Hello Meow -- Connected and working from service!");
+	public AuthenticationBean helloWorldBean(){
+		return new AuthenticationBean( "Hello Meow -- Connected and working from service!");
 	}
 	
 	@GetMapping(path="/hello-world-bean-error")
-	public HelloWorldBean helloWorldBeanError(){
-		return new HelloWorldBean("Some Error has Happened!");
+	public AuthenticationBean helloWorldBeanError(){
+		return new AuthenticationBean("Some Error has Happened!");
 	}
 	
 	//hello-world/path-variable/{sky}
@@ -36,8 +36,8 @@ public class HelloWorldController {
 	//returning a new bean -> turning it toString format -> it takes in 2 arguments
 	// add a %s right after 1st argument -> second argument will be output
 	
-	public HelloWorldBean helloWorldPathVariable(@PathVariable String name){
-		return new HelloWorldBean(String.format("Hello Meow, %s", name));
+	public AuthenticationBean helloWorldPathVariable(@PathVariable String name){
+		return new AuthenticationBean(String.format("Hello Meow, %s", name));
 	}
 	//What is happening?
 	//the value that is being passed in is picked up by the controller -> is sent back as a response
