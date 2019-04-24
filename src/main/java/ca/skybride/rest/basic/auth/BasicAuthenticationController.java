@@ -1,4 +1,4 @@
-package ca.skybride.rest.webservice.basic.auth;
+package ca.skybride.rest.basic.auth;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

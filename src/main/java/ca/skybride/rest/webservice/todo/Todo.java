@@ -2,21 +2,31 @@ package ca.skybride.rest.webservice.todo;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Todo {
 
-	private long id;
+	@Id
+	@GeneratedValue
+	private Long id;
+	
 	private String username;
 	private String description;
 	private Date targetDate;
 	private boolean isDone;
 	
-	//tutorial had to put this in to get browser restlet client to not show a 500 error response
-//	protected Todo() {
-//		
-//	}
-	//it worked automatically for us
+//BEWARE of ERROR
+// This default constructor for entity is REQUIRED
+	//If protected Todo(){} is not here Todos will not appear on localhost4200
+	protected Todo() {
+		
+	}
 
-	public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
+
+	public Todo(Long id, String username, String description, Date targetDate, boolean isDone) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -25,11 +35,11 @@ public class Todo {
 		this.isDone = isDone;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
